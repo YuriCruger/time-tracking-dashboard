@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../dist/output.css">
+
+  <title>Time tracking dashboard</title>
+
+
+</head>
+
+<body class="font-sans h-full bg-very-dark-blue flex items-center justify-center md:h-screen">
+  <main class="flex flex-col gap-6 items-center w-full my-10 md:grid md:grid-cols-4 md:mx-20 md:justify-center">
+    
+    <div class="bg-dark-blue rounded-xl w-5/6 md:row-span-2 md:h-full md:w-full">
+      <div class="bg-blue rounded-xl p-6">
+          <div class="flex items-center gap-6 md:flex-col md:items-start">
+            <div>
+              <img src="../images/image-jeremy.png" alt="Jeremy Robson" class="h-20 w-20 border-2 border-pale-blue rounded-full">
+            </div>
+            <div class="md:mb-20">
+              <p class="text-pale-blue">Report for</p>
+              <h2 class="text-white text-2xl md:text-2xl lg:text-4xl">Jeremy Robson</h2>
+            </div>
+          </div>
+      </div>
+  
+      <div class="flex items-center px-6 py-4 justify-between text-pale-blue md:flex-col md:items-start">
+        <a id="daily_select" class="hover:text-white cursor-pointer">Daily</a> <br>
+        <a id="weekly_select" class="hover:text-white cursor-pointer">Weekly</a> <br>
+        <a id="monthly_select" class="hover:text-white cursor-pointer">Monthly</a>
+      </div>
+  </div>
+  
+
+    <div class="relative flex flex-col-reverse bg-light-red rounded-xl w-5/6 h-40 md:h-60 md:w-full">
+        <img src="../images/icon-work.svg" alt="work symbol" class="absolute right-4 top-0">
+      <div class="bg-dark-blue rounded-xl h-2/3 px-6 py-2 z-10 md:px-4 lg:px-6">
+          <div class="flex items-center justify-between mt-2">
+              <h3 class="text-white font-semibold">Work</h3>
+              <img src="../images/icon-ellipsis.svg" alt="ellipsis">
+          </div>
+          <div class="flex items-center justify-between mt-4 md:flex-col md:items-start">
+            <h2 id="work_current_time" class="text-4xl text-white mb-2 md:text-3xl lg:text-4xl">5hrs</h2>
+            <p id="work_previous_time" class="text-pale-blue">Last Week</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="relative flex flex-col-reverse bg-soft-blue rounded-xl w-5/6 h-40 md:h-60 md:w-full">
+    <img src="../images/icon-play.svg" alt="work symbol" class="absolute right-4 top-0">
+  <div class="bg-dark-blue rounded-xl h-2/3 px-6 py-2 z-10 md:px-4 lg:px-6">
+      <div class="flex items-center justify-between mt-2">
+          <h3 class="text-white font-semibold">Play</h3>
+          <img src="../images/icon-ellipsis.svg" alt="ellipsis">
+      </div>
+      <div class="flex items-center justify-between mt-4 md:flex-col md:items-start">
+        <h2 id="play_current_time" class="text-4xl text-white mb-2 md:text-3xl lg:text-4xl">1hr</h2>
+        <p id="play_previous_time" class="text-pale-blue">Last Week</p>
+      </div>
+  </div>
+</div>
+
+<div class="relative flex flex-col-reverse bg-light-red-study rounded-xl w-5/6 h-40 md:h-60 md:w-full">
+  <img src="../images/icon-study.svg" alt="work symbol" class="absolute right-4 top-0">
+<div class="bg-dark-blue rounded-xl h-2/3 px-6 py-2 z-10 md:px-4 lg:px-6">
+    <div class="flex items-center justify-between mt-2">
+        <h3 class="text-white font-semibold">Study</h3>
+        <img src="../images/icon-ellipsis.svg" alt="ellipsis">
+    </div>
+    <div class="flex items-center justify-between mt-4 md:flex-col md:items-start">
+      <h2 id="study_current_time" class="text-4xl text-white mb-2 md:text-3xl lg:text-4xl">0hrs</h2>
+      <p id="study_previous_time" class="text-pale-blue">Previous - 1hr</p>
+    </div>
+</div>
+</div>
+
+<div class="relative flex flex-col-reverse bg-lime-green rounded-xl w-5/6 h-40 md:h-60 md:w-full">
+  <img src="../images/icon-exercise.svg" alt="work symbol" class="absolute right-4 top-0">
+<div class="bg-dark-blue rounded-xl h-2/3 px-6 py-2 z-10 md:px-4 lg:px-6">
+    <div class="flex items-center justify-between mt-2">
+        <h3 class="text-white font-semibold">Exercise</h3>
+        <img src="../images/icon-ellipsis.svg" alt="ellipsis">
+    </div>
+    <div class="flex items-center justify-between mt-4 md:flex-col md:items-start">
+      <h2 id="exercise_current_time" class="text-4xl text-white mb-2 md:text-3xl lg:text-4xl">1hr</h2>
+      <p id="exercise_previous_time" class="text-pale-blue">Previous - 1hr</p>
+    </div>
+</div>
+</div>
+    
+<div class="relative flex flex-col-reverse bg-violet rounded-xl w-5/6 h-40 md:h-60 md:w-full">
+  <img src="../images/icon-social.svg" alt="work symbol" class="absolute right-4 top-0">
+<div class="bg-dark-blue rounded-xl h-2/3 px-6 py-2 z-10 md:px-4 lg:px-6">
+    <div class="flex items-center justify-between mt-2">
+        <h3 class="text-white font-semibold">Social</h3>
+        <img src="../images/icon-ellipsis.svg" alt="ellipsis">
+    </div>
+    <div class="flex items-center justify-between mt-4 md:flex-col md:items-start">
+      <h2 id="social_current_time" class="text-4xl text-white mb-2 md:text-3xl lg:text-4xl">1hr</h2>
+      <p id="social_previous_time" class="text-pale-blue">Previous - 3hrs</p>
+    </div>
+</div>
+</div>
+
+
+<div class="relative flex flex-col-reverse bg-soft-orange rounded-xl w-5/6 h-40 md:h-60 md:w-full">
+  <img src="../images/icon-self-care.svg" alt="work symbol" class="absolute right-4 top-0">
+<div class="bg-dark-blue rounded-xl h-2/3 px-6 py-2 z-10 md:px-4 lg:px-6">
+    <div class="flex items-center justify-between mt-2">
+        <h3 class="text-white font-semibold">Self Care</h3>
+        <img src="../images/icon-ellipsis.svg" alt="ellipsis">
+    </div>
+    <div class="flex items-center justify-between mt-4 md:flex-col md:items-start">
+      <h2 id="selfCare_current_time" class="text-4xl text-white mb-2 md:text-3xl lg:text-4xl">0hrs</h2>
+      <p id="selfCare_previous_time" class="text-pale-blue">Previous - 1hr</p>
+    </div>
+</div>
+</div>
+
+  </main>
+  <script src="./app.js"></script>
+</body>
+
+</html>
